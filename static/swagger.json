@@ -1,0 +1,21 @@
+
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "This is API , <br>Made with ❤ by .",
+        "version": "1.0.0",
+        "title": "API Documentation.",
+        "contact": {
+            "email": ""
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "servers": [
+      {
+        "url": "/boilerplate-flask/"
+      }
+    ]
+}
