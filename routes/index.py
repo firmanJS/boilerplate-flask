@@ -1,5 +1,5 @@
-from flask import Blueprint
-from flask import jsonify
+from flask import Blueprint, request
+from exceptions.message import successResponse
 
 bp = Blueprint(__name__, 'index')
 
@@ -7,23 +7,12 @@ bp = Blueprint(__name__, 'index')
 # DONE
 @bp.route("/", methods=["GET"])
 def index():
-    response = {
-        "error": 0,
-        "message": "Welcome to Boilerplate API.",
-        "data": {
-            "doc":  "/documentation"
-        }
-    }
-    return jsonify(response)
+    msg = "Welcome to Boilerplate API."
+    data = { "doc": "%sdocumentation" % (request.url) }
+    return successResponse(msg, data)
 
 
 @bp.route("/is_alive", methods=["GET"])
 def is_alive():
     # success response format
-    response = {
-        "error": 0,
-        "message": "Connected",
-        "data": []
-    }
-
-    return jsonify(response)
+    return successResponse("Connected")
