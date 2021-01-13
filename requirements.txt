@@ -20,6 +20,7 @@ mccabe==0.6.1
 numpy==1.19.4
 pandas==1.2.0
 passlib==1.7.4
+psycopg2==2.8.6
 pycparser==2.20
 PyJWT==1.7.1
 pylint==2.6.0

@@ -2,7 +2,6 @@ from flask import Flask
 from flask_cors import CORS
 from flask_compress import Compress
 from flask_swagger_ui import get_swaggerui_blueprint
-
 from helpers import jwtmanager
 from helpers import postgre_alchemy
 import routes
@@ -10,19 +9,15 @@ import routes
 cors = CORS()
 compress = Compress()
 
-
 def createApp(configuration):
-    app = Flask(
-        __name__.split(',')[0],
-        static_url_path='/static',
-        static_folder='../static')
+    app = Flask(__name__)
 
     # swagger specific server
-    SWAGGER_URL = '/boilerplate-flask'
-    API_URL = '/boilerplate-flask/static/swagger.json'
-    SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
-        SWAGGER_URL,
-        API_URL,
+    swagger_url = '/api/documentation'
+    api_url = '/static/swagger.json'
+    swagger_ui_blueprint = get_swaggerui_blueprint(
+        swagger_url,
+        api_url,
         config={
             'app_name': "Boilerplate API",
             'base_url': ''
@@ -31,7 +26,7 @@ def createApp(configuration):
 
     # register route blueprint
     app.register_blueprint(routes.index.bp)
-    app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix="/documentation")
+    app.register_blueprint(swagger_ui_blueprint, url_prefix=swagger_url)
     app.register_blueprint(routes.error.bp)
 
     # load configuration

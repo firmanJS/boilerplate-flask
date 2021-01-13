@@ -62,6 +62,7 @@ confidence=
 # --disable=W".
 disable=print-statement,
         C0114, # missing-module-docstring
+        C0115, # missing-module-docstring
         C0116, # missing-function-docstring
         parameter-unpacking,
         unpacking-in-except,

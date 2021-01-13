@@ -1,5 +1,5 @@
 # Boilerplate-Flask
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/ef9029f8c10ed08f7c56/maintainability)](https://codeclimate.com/github/firmanJS/boilerplate-flask/maintainability)
 
 ## About
 
