@@ -1,6 +1,6 @@
 from config import configuration, http
 
-app = http.create_app(configuration.Configuration)
+app = http.createApp(configuration.Configuration)
 port = int(configuration.Configuration.PORT)
 
 if __name__ == "__main__":

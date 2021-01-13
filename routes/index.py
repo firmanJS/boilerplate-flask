@@ -3,7 +3,6 @@ from exceptions.message import successResponse
 
 bp = Blueprint(__name__, 'index')
 
-
 # DONE
 @bp.route("/", methods=["GET"])
 def index():
@@ -13,6 +12,13 @@ def index():
 
 
 @bp.route("/is_alive", methods=["GET"])
-def is_alive():
+def isAlive():
+    '''Do something.
+
+    Parameters
+    ----------
+    Returns
+    -------
+    '''
     # success response format
     return successResponse("Connected")

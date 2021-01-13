@@ -11,7 +11,7 @@ cors = CORS()
 compress = Compress()
 
 
-def create_app(configuration):
+def createApp(configuration):
     app = Flask(
         __name__.split(',')[0],
         static_url_path='/static',
