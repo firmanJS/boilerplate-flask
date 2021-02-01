@@ -1,7 +1,7 @@
 from . import (
-    index, error
+    index, error, user
 )
 
 __all__ = [
-    index, error
+    index, error, user
 ]
