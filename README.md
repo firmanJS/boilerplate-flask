@@ -51,7 +51,12 @@ example install package
 pip install package && pip freeze > requirements.txt
 ```
 
-
+migrate table
+```sh
+$ flask db init
+$ flask db migrate
+$ flask db upgrade
+```
 
 # Usage
 

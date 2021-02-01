@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from exceptions.message import successResponse
-from helpers.postgre_alchemy import postgre_alchemy as db
+from helpers.postgre_psycopg import connect
 
 bp = Blueprint(__name__, 'index')
 
@@ -27,22 +27,12 @@ def isAlive():
     Returns
     -------
     '''
+    a, b = connect()
+    print(str(a))
 
-    try:
-        connection = db.session.execute("SELECT 1")
-        user = []
-        for res in connection:
-            user.append(res[0])
-
-
-        return str(user)
-    except Exception as err :
-        return str(err)
-
-    # success response format
     data = {
         'api': 'api running',
-        'database': err
+        'database': [dict(row) for row in b]
     }
 
     return successResponse('Connected', data)
